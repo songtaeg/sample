@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 목록</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none; 
+            color: #007bff; /* 링크 색상 설정 */
+        }
+    </style>
+</head>
+<body>
+    <div>학생 목록</div>
+    <table>
+        <thead>
+            <tr>
+                <th>학번</th>
+                <th>이름</th>
+                <th>학과</th>
+                <th>학년</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% list.forEach(student => { %>
+                <tr>
+                    <td><%= student.stuNo %></td>
+                    <td>
+                        <a href="/student/<%= student.stuNo %>"><%= student.stuName %></a>
+                    </td>
+                    <td><%= student.stuDept %></td>
+                    <td><%= student.stuGrade %></td>
+                    <td>
+                        <form action="/student/<%= student.stuNo %>?_method=DELETE" method="post">
+                            <button type="sumit">삭제</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <!--<a href="./student-add">추가하기</a>-->
+</body>
+</html>

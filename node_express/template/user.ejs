@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>user 목록</div>
+
+    <% list.forEach( user=>{ %>
+        <li>
+            id:<%=user.id %> 
+            pwd:<%=user.pwd %> 
+            name:<%=user.name %> 
+            gender:<%=user.gender %>
+        </li>
+        <!-- <li><%= "<div>"+user.name+"</div>" %></li>
+        <li><%- "<div>"+user.name+"</div>" %></li> -->
+    <% }) %>
+    <button>글쓰기</button>
+</body>
+</html>

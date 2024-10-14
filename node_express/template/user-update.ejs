@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/<%= user.id %>?_method=PUT" method="post">
+        <div>
+            <label>
+            아이디: 
+                <input type="text" name="id" value="<%= user.id %>">
+            </label>
+        </div>
+
+        <div>
+            <label>
+            비밀번호: 
+                <input type="password" name="pwd" value="<%= user.pwd %>">
+            </label>
+        </div>
+
+        <div>
+            <label>
+            이름: 
+                <input type="text" name="name" value="<%= user.name %>">
+            </label>
+        </div>
+
+        <div> 
+            <label>
+                성별:
+                <input type="radio" name="gender" value="M" <%= user.gender == 'M' ? "checked" : "" %> >남
+            </label>
+            <label>    
+                <input type="radio" name="gender" value="F" <%= user.gender == 'F' ? "checked" : "" %> >여
+            </label>
+        </div>
+        <button type="submit">수정</button>
+    </form>
+</body>
+</html>
